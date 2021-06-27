@@ -24,11 +24,16 @@ import org.springframework.context.annotation.Lazy;
 @ComponentScan(basePackages = "br.com.simplenetwork")
 public class MongoConfiguration extends AbstractMongoClientConfiguration implements InitializingBean {
 
-    public String mongoUri = "mongodb://localhost:27017";
+    //public String mongoUri = "mongodb://localhost:27017";
+    public String mongoUri = "mongodb+srv://cluster0.vfh7a.mongodb.net/agenda?authSource=admin";
 
-    public String userName = "";
+    //public String userName = "";
 
-    public String password = "";
+    //public String password = "";
+
+    public String userName = "user_2";
+
+    public String password = "Xp13sg13";
 
     public String database = "agenda";
 
