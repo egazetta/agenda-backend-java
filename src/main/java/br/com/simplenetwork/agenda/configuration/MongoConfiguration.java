@@ -25,7 +25,7 @@ import org.springframework.context.annotation.Lazy;
 public class MongoConfiguration extends AbstractMongoClientConfiguration implements InitializingBean {
 
     //public String mongoUri = "mongodb://localhost:27017";
-    public String mongoUri = "mongodb+srv://cluster0.vfh7a.mongodb.net/agenda?authSource=admin";
+    public String mongoUri = "mongodb+srv://cluster0.vfh7a.mongodb.net/agenda?retryWrites=true&w=majority";
 
     //public String userName = "";
 
