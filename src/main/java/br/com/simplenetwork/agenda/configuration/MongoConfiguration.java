@@ -31,9 +31,9 @@ public class MongoConfiguration extends AbstractMongoClientConfiguration impleme
 
     //public String password = "";
 
-    public String userName = "user_2";
+    public String userName = "agenda";
 
-    public String password = "Xp13sg13";
+    public String password = "MS28FbxhWBvXUrz";
 
     public String database = "agenda";
 
