@@ -24,6 +24,7 @@ import org.springframework.context.annotation.Lazy;
 @ComponentScan(basePackages = "br.com.simplenetwork")
 public class MongoConfiguration extends AbstractMongoClientConfiguration implements InitializingBean {
 
+    
     //public String mongoUri = "mongodb://localhost:27017";
     public String mongoUri = "mongodb+srv://agenda:MS28FbxhWBvXUrz@cluster0.vfh7a.mongodb.net/agenda?retryWrites=true&w=majority";
 
@@ -40,7 +41,7 @@ public class MongoConfiguration extends AbstractMongoClientConfiguration impleme
 
     @Bean
     public MongoClient mongoClient() {
-
+        System.setProperty("jdk.tsl.trustNameService", "true");
         final MongoClientSettings.Builder settingsBuilder = MongoClientSettings.builder().
                 applyConnectionString(new ConnectionString(mongoUri));
 
