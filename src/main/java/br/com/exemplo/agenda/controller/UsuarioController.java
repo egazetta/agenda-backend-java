@@ -25,12 +25,14 @@ public class UsuarioController {
 
 
     @GetMapping( path = "/usuario")
+    @CrossOrigin(origins = "https://agenda-frontend-angular.herokuapp.com/")
     public ResponseEntity list() {
         System.out.println(service.listaUsuarios());
         return ResponseEntity.ok().body(service.listaUsuarios());
     }
 
     @PostMapping( path = "/usuario")
+    @CrossOrigin(origins = "https://agenda-frontend-angular.herokuapp.com/")
     public ResponseEntity save(@RequestBody Usuario usuario) {
         return ResponseEntity.ok().body(service.salvaUsuario(usuario));
     }
