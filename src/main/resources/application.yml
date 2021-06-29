@@ -1,6 +1,6 @@
 server:
     port: 1880
 mongo:
-    user: user_2
-    password: ENC(j2vuaONtiawq9vYk6/kQ0KGfOTZjFiyE)
+    user: user
+    password: 12345612
     database: agenda
