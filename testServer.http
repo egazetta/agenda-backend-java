@@ -8,3 +8,17 @@ content-type: application/json
 {
     "nome": "Gazetta"
 }
+
+###
+
+
+GET https://agenda-backend-java.herokuapp.com/usuario
+
+###
+
+POST https://agenda-backend-java.herokuapp.com/usuario
+content-type: application/json
+
+{
+    "nome": "Gazetta"
+}

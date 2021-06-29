@@ -59,7 +59,7 @@ public class MongoConfiguration extends AbstractMongoClientConfiguration impleme
         //System.setProperty("jdk.tsl.trustNameService", "true");
         //MongoClient mongoClient = MongoClients.create(mongoUri);
 
-        MongoClient mongoClient = MongoClients.create("mongodb+srv://"+userName+":"+password+"@cluster0.vfh7a.mongodb.net/"+database+"?retryWrites=true&w=majorityoUri");
+        MongoClient mongoClient = MongoClients.create("mongodb+srv://"+userName+":"+password+"@cluster0.vfh7a.mongodb.net/"+database+"?retryWrites=true");
         //MongoClient mongoClient = new MongoClient(new MongoClientURI(mongoUri));   
 
        // final MongoClientSettings.Builder settingsBuilder = MongoClientSettings.builder().
