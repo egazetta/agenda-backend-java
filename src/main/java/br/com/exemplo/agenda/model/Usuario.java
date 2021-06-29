@@ -1,8 +1,5 @@
-package br.com.simplenetwork.agenda.model;
+package br.com.exemplo.agenda.model;
 
-import java.util.Set;
-
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 

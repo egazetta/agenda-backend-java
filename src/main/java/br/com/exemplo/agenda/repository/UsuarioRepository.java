@@ -1,6 +1,6 @@
-package br.com.simplenetwork.agenda.repository;
+package br.com.exemplo.agenda.repository;
 
-import br.com.simplenetwork.agenda.model.Usuario;
+import br.com.exemplo.agenda.model.Usuario;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 

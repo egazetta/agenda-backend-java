@@ -15,7 +15,7 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="br.com.simplenetwork"  level="debug" />
+        <Logger name="br.com.exemplo"  level="debug" />
         <Root level="info">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="roll-by-time"/>

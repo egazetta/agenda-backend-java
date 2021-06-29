@@ -1,3 +1,4 @@
+
 package br.com.exemplo.agenda;
 
 import br.com.exemplo.agenda.model.Usuario;
@@ -8,19 +9,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.junit.Assert;
-
-import java.util.List;
+import org.springframework.beans.factory.annotation.Value;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AdminServiceTest {
 
-    @Autowired
-    UsuarioService service;
+public class ReadApplicationTest{
+
+    @Value("${mongo.user}")
+    public String userName;
+
+    @Value("${mongo.password}")
+    public String password;
+
+    @Value("${mongo.database}")
+    public String database;
 
     @Test
-    public void testarListarUsuarios(){
-        final List<Usuario> lista = service.listaUsuarios();
-        Assert.assertEquals(1, lista.size());
+    public void listApplicationParams(){
+        System.out.println(password);
+        Assert.assertEquals("Xp13sg13", password);
     }
 }

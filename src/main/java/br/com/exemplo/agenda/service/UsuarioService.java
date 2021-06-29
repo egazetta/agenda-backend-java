@@ -1,8 +1,7 @@
-package br.com.simplenetwork.agenda.service;
+package br.com.exemplo.agenda.service;
 
-import br.com.simplenetwork.agenda.repository.UsuarioRepository;
-import br.com.simplenetwork.agenda.model.Usuario;
-import br.com.simplenetwork.agenda.repository.UsuarioRepository;
+import br.com.exemplo.agenda.repository.UsuarioRepository;
+import br.com.exemplo.agenda.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

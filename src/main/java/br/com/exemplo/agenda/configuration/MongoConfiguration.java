@@ -1,8 +1,5 @@
-package br.com.simplenetwork.agenda.configuration;
+package br.com.exemplo.agenda.configuration;
 
-import com.mongodb.ConnectionString;
-import com.mongodb.MongoClientSettings;
-import com.mongodb.MongoCredential;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,38 +16,62 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Lazy;
 
+
 @Configuration
-@EnableMongoRepositories(basePackages = "br.com.simplenetwork.agenda")
-@ComponentScan(basePackages = "br.com.simplenetwork")
+@EnableMongoRepositories(basePackages = "br.com.exemplo.agenda")
+@ComponentScan(basePackages = "br.com.exemplo")
 public class MongoConfiguration extends AbstractMongoClientConfiguration implements InitializingBean {
 
     
     //public String mongoUri = "mongodb://localhost:27017";
-    public String mongoUri = "mongodb+srv://agenda:MS28FbxhWBvXUrz@cluster0.vfh7a.mongodb.net/agenda?retryWrites=true&w=majority";
+    public String mongoUri = "mongodb+srv://cluster0.vfh7a.mongodb.net/agenda?retryWrites=true&w=majority";
 
     //public String userName = "";
 
     //public String password = "";
+    @Value("${mongo.user}")
+    public String userName;
 
-    public String userName = "agenda";
+    @Value("${mongo.password}")
+    public String password;
 
-    public String password = "MS28FbxhWBvXUrz";
+    @Value("${mongo.database}")
+    public String database;
 
-    public String database = "agenda";
 
-
+    /*
     @Bean
     public MongoClient mongoClient() {
-        System.setProperty("jdk.tsl.trustNameService", "true");
         final MongoClientSettings.Builder settingsBuilder = MongoClientSettings.builder().
                 applyConnectionString(new ConnectionString(mongoUri));
 
-        if (! this.userName.isEmpty()) {
+        //if (! this.userName.isEmpty()) {
             settingsBuilder.credential(MongoCredential.createCredential(userName, database, password.toCharArray()));
-        }
+        //}
 
         return MongoClients.create(settingsBuilder.build());
     }
+    */
+    
+    
+    @Bean
+    public MongoClient mongoClient() {
+        //System.setProperty("jdk.tsl.trustNameService", "true");
+        //MongoClient mongoClient = MongoClients.create(mongoUri);
+
+        MongoClient mongoClient = MongoClients.create("mongodb+srv://"+userName+":"+password+"@cluster0.vfh7a.mongodb.net/"+database+"?retryWrites=true&w=majorityoUri");
+        //MongoClient mongoClient = new MongoClient(new MongoClientURI(mongoUri));   
+
+       // final MongoClientSettings.Builder settingsBuilder = MongoClientSettings.builder().
+         //       applyConnectionString(new ConnectionString(mongoUri));
+
+        //if (! this.userName.isEmpty()) {
+        //    settingsBuilder.credential(MongoCredential.createCredential(userName, database, password.toCharArray()));
+       // }
+
+        return mongoClient;
+    }
+    
 
     @Override
     protected String getDatabaseName() {

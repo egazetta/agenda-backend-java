@@ -1,7 +1,7 @@
-package br.com.simplenetwork.agenda.controller;
+package br.com.exemplo.agenda.controller;
 
-import br.com.simplenetwork.agenda.model.Usuario;
-import br.com.simplenetwork.agenda.service.UsuarioService;
+import br.com.exemplo.agenda.model.Usuario;
+import br.com.exemplo.agenda.service.UsuarioService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

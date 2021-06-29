@@ -1,4 +1,4 @@
-package br.com.simplenetwork.agenda;
+package br.com.exemplo.agenda;
 
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 import org.springframework.boot.SpringApplication;

@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'br.com.simplenetwork'
+group = 'br.com.exemplo'
 version = '1.0.0'
 sourceCompatibility = '8'
 
@@ -64,9 +64,12 @@ dependencies {
 
 	testRuntime("org.codehaus.groovy:groovy-all:2.5.2")
 }
+bootRun {
+	jvmArgs = ["-Djdk.tls.client.protocols=TLSv1.2", "-Djasypt.encryptor.password=1234"]
+}
 
 bootJar {
-	mainClassName = 'br.com.simplenetwork.agenda.AgendaApplication'
+	mainClassName = 'br.com.exemplo.agenda.AgendaApplication'
 	manifest {
 		attributes('Implementation-Title':   'Agenda',
 				'Implementation-Version': getArchiveVersion())
@@ -80,6 +83,7 @@ configurations {
 }
 
 test {
+	jvmArgs = ["-Djdk.tls.client.protocols=TLSv1.2"]
 	useJUnitPlatform()
 }
 
